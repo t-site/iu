@@ -48,3 +48,11 @@
 		line="2"
 	fi
 	cat $DOSI | sed 's/\t/,/g' | bash ./dousi.sh $line
+	noun=Jl.txt
+	lines=$(cat $noun | wc -l )
+	line=$( expr ${RANDOM} % ${lines} )
+	if [ ${line} -eq 0 ]
+	then
+		line="1"
+	fi
+	sed -n ${line}p $noun
