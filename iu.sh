@@ -1,22 +1,10 @@
 #!/bin/bash
-	DOSI=""
 	noun=T.txt
-	lines=$(cat $noun | wc -l )
-	line=$( expr ${RANDOM} % ${lines} )
-	if [ ${line} -eq 0 ]
-	then
-		line="1"
-	fi
-	sed -n ${line}p $noun
+	shuf -n 1 "${noun}"
 	noun=S2.txt
-	lines=$(cat $noun | wc -l )
-	line=$( expr ${RANDOM} % ${lines} )
-	if [ ${line} -lt 2 ]
-	then
-		line="2"
-	fi
-	sed -n ${line}p $noun | sed 's/ .*$//'
-	S1=$(sed -n ${line}p $noun | sed 's/^.* //')
+	SW=$(shuf -n 1 "${noun}")
+	echo "${SW}" | sed 's/ .*$//'
+	S1=$(echo "${SW}" | sed 's/^.* //')
 	if [ "$S1" = "m" ]
 	then
 		DOSI="J-mono.txt"
@@ -41,18 +29,12 @@
 	else
 		DOSI="JV.txt"
 	fi
-	lines=$(cat $DOSI | wc -l )
-	line=$( expr ${RANDOM} % ${lines} )
-	if [ ${line} -lt 2 ]
+	lines=$(cat "${DOSI}" | wc -l )
+	line=$( expr "${RANDOM}" % "${lines}" )
+	if [ "${line}" -lt 2 ]
 	then
 		line="2"
 	fi
-	cat $DOSI | sed 's/\t/,/g' | bash ./dousi.sh $line
+	cat "${DOSI}" | tr '\t' ',' | bash ./dousi.sh "${line}"
 	noun=Jl.txt
-	lines=$(cat $noun | wc -l )
-	line=$( expr ${RANDOM} % ${lines} )
-	if [ ${line} -eq 0 ]
-	then
-		line="1"
-	fi
-	sed -n ${line}p $noun
+	shuf -n 1 "${noun}"
