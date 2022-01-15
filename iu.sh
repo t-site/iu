@@ -11,12 +11,21 @@
 	elif [ "$S1" = "u" ]
 	then
 		DOSI="J-move.txt"
+	elif [ "$S1" = "uL" ]
+	then
+		DOSI="J-move-L.txt"
 	elif [ "$S1" = "i" ]
 	then
 		DOSI="J-data.txt"
+	elif [ "$S1" = "iL" ]
+	then
+		DOSI="J-data-L.txt"
 	elif [ "$S1" = "x" ]
 	then
 		DOSI="J-xyz.txt"
+	elif [ "$S1" = "xL" ]
+	then
+		DOSI="J-xyz-L.txt"
 	elif [ "$S1" = "e" ]
 	then
 		DOSI="J-energy.txt"
@@ -26,6 +35,9 @@
 	elif [ "$S1" = "t" ]
 	then
 		DOSI="J-time.txt"
+	elif [ "$S1" = "tL" ]
+	then
+		DOSI="J-time-L.txt"
 	else
 		DOSI="JV.txt"
 	fi
