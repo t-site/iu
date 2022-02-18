@@ -8,6 +8,9 @@
 	if [ "$S1" = "m" ]
 	then
 		DOSI="J-mono.txt"
+	elif [ "$S1" = "ms" ]
+	then
+		DOSI="J-mono-S.txt"
 	elif [ "$S1" = "u" ]
 	then
 		DOSI="J-move.txt"
