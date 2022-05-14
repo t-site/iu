@@ -45,11 +45,7 @@
 		DOSI="JV.txt"
 	fi
 	lines=$(cat "${DOSI}" | wc -l )
-	line=$( expr "${RANDOM}" % "${lines}" )
-	if [ "${line}" -lt 2 ]
-	then
-		line="2"
-	fi
+	line=$( shuf -i 2-${lines} -n 1 )
 	cat "${DOSI}" | tr '\t' ',' | bash ./dousi.sh "${line}"
 	noun=Jl.txt
 	shuf -n 1 "${noun}"
