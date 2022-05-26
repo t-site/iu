@@ -38,6 +38,9 @@
 	elif [ "$S1" = "t" ]
 	then
 		DOSI="J-time.txt"
+	elif [ "$S1" = "h" ]
+	then
+		DOSI="J-Elec.txt"
 	elif [ "$S1" = "tL" ]
 	then
 		DOSI="J-time-L.txt"
